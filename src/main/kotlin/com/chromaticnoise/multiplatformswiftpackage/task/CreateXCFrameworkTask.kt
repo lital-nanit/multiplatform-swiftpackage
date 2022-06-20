@@ -29,7 +29,7 @@ internal fun Project.registerCreateXCFrameworkTask() = tasks.register("createXCF
                 add(dsymFile.path)
             }
         }
-        println "$this"
+        println("XXXXXX $this")
     })
 
     doFirst {
