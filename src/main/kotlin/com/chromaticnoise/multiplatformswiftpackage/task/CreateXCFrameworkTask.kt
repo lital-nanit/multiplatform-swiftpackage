@@ -12,7 +12,7 @@ internal fun Project.registerCreateXCFrameworkTask() = tasks.register("createXCF
     val configuration = getConfigurationOrThrow()
     val xcFrameworkDestination = File(configuration.outputDirectory.value, "${configuration.packageName.value}.xcframework")
     val frameworks = configuration.appleTargets.mapNotNull { it.getFramework(configuration.buildConfiguration) }
-    println("YYYYY")
+    
     dependsOn(frameworks.map { it.linkTask.name })
 
     executable = "xcodebuild"
@@ -33,6 +33,8 @@ internal fun Project.registerCreateXCFrameworkTask() = tasks.register("createXCF
     })
 
     doFirst {
+        println("YYYYY")
+        println "YYY1YY"
         xcFrameworkDestination.deleteRecursively()
     }
 }
