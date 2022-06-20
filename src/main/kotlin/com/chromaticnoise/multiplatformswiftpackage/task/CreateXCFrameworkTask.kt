@@ -7,7 +7,7 @@ import java.io.File
 
 internal fun Project.registerCreateXCFrameworkTask() = tasks.register("createXCFramework", Exec::class.java) {
     group = "multiplatform-swift-package"
-    description = "Creates an XCFramework for all declared Apple targets"
+    description = "Creates an XCFramework for all declared Apple targets - test changes"
 
     val configuration = getConfigurationOrThrow()
     val xcFrameworkDestination = File(configuration.outputDirectory.value, "${configuration.packageName.value}.xcframework")
@@ -33,8 +33,6 @@ internal fun Project.registerCreateXCFrameworkTask() = tasks.register("createXCF
     })
 
     doFirst {
-        println("YYYYY")
-        println "YYY1YY"
         xcFrameworkDestination.deleteRecursively()
     }
 }
