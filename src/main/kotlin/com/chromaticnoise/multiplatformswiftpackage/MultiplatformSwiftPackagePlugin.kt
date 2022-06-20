@@ -18,7 +18,7 @@ public class MultiplatformSwiftPackagePlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         val extension = project.extensions.create<SwiftPackageExtension>(EXTENSION_NAME, project)
-        println("133333323")
+
         project.afterEvaluate {
             project.extensions.findByType<KotlinMultiplatformExtension>()?.let { kmpExtension ->
                 extension.appleTargets = AppleTarget.allOf(
